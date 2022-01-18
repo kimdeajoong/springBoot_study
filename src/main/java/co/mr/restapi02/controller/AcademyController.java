@@ -25,4 +25,11 @@ public class AcademyController {
     public List<Academy> getAcademies(){
         return academyMapper.getAcademies();
     }
+
+    @GetMapping("/{id}")
+    public Academy getById(@PathVariable("id") int id){
+        return academyMapper.getById(id);
+    }
+
+
 }
