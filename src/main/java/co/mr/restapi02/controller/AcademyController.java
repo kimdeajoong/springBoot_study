@@ -3,10 +3,9 @@ package co.mr.restapi02.controller;
 import co.mr.restapi02.mapper.AcademyMapper;
 import co.mr.restapi02.model.Academy;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/academy")
@@ -21,4 +20,8 @@ public class AcademyController {
         return academyMapper.insert(academy);
     }
 
+    @GetMapping("")
+    public List<Academy> getAcademies(){
+        return academyMapper.getAcademies();
+    }
 }
